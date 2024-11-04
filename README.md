@@ -111,16 +111,16 @@ Folder Structure
 php
 Copy code
 memoria/
-├── backend/                    # Django back-end folder
-│   ├── memoria_backend/        # Django project directory
-│   ├── apps/                   # Django apps (e.g., users, memories, timelines)
-│   ├── requirements.txt        # Python dependencies
-│   └── manage.py               # Django entry point
-└── frontend/                   # Front-end folder
-    ├── src/                    # Source code for front end
-    ├── public/                 # Public assets
-    ├── package.json            # npm dependencies
-    └── README.md               # Front-end specific documentation (optional)
+├── backend/                    # Django back-end folder<br/>
+│   ├── memoria_backend/        # Django project directory<br/>
+│   ├── apps/                   # Django apps (e.g., users, memories, timelines)<br/>
+│   ├── requirements.txt        # Python dependencies<br/>
+│   └── manage.py               # Django entry point<br/>
+└── frontend/                   # Front-end folder<br/>
+    ├── src/                    # Source code for front end<br/>
+    ├── public/                 # Public assets<br/>
+    ├── package.json            # npm dependencies<br/>
+    └── README.md               # Front-end specific documentation (optional)<br/>
 Contributing
 We welcome contributions to improve Memoria. To contribute:
 
