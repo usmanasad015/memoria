@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OTP Verification</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="css/otp.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-fluid h-100">
+      <div class="row min-vh-100 g-0 padding_bg">
+        <div class="col-md-5 otp__col_6 d-none d-md-block">
+          <div class="position-relative h-100">
+            <img
+              src="static/images/Group 1000001526.png"
+              alt="Background"
+              class="w-100 h-100 otp__image__parent"
+            />
+            <a class="navbar-brand otp__image__child__1" href="#">
+              <img
+                src="static/images/LOGO.png"
+                height="30"
+                alt="Logo"
+                loading="lazy"
+              />
+            </a>
+            <img
+              src="static/images/login.png"
+              alt="Login"
+              class="otp__image otp__image__child__2"
+            />
+            <div class="otp_image__child_text">
+              <h1 class="hero_section__h1 text-black">
+                Keep the <span class="memories">Memories</span> of your<br />
+                loved ones <span class="alive">Alive</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 col-12 otp__md__7 d-flex justify-content-center">
+          <div class="otp__form_container">
+            <a class="navbar-brand d-block d-md-none" href="#">
+              <img
+                src="static/images/LOGO.png"
+                height="30"
+                alt="Logo"
+                loading="lazy"
+              />
+            </a>
+            <form class="otp__form" id="otp-form">
+              <h2 class="otp_h2">OTP Verification</h2>
+              <p class="otp_p">
+                Enter the OTP Verification code associated with your email
+              </p>
+              <div class="form-group mt-4">
+                <label for="otp-input" class="otp_label">Code</label>
+                <div class="otp-input-group">
+                  <input
+                    type="text"
+                    maxlength="1"
+                    class="otp_input"
+                    id="otp-1"
+                  />
+                  <input
+                    type="text"
+                    maxlength="1"
+                    class="otp_input"
+                    id="otp-2"
+                  />
+                  <input
+                    type="text"
+                    maxlength="1"
+                    class="otp_input"
+                    id="otp-3"
+                  />
+                  <input
+                    type="text"
+                    maxlength="1"
+                    class="otp_input"
+                    id="otp-4"
+                  />
+                  <input
+                    type="text"
+                    maxlength="1"
+                    class="otp_input"
+                    id="otp-5"
+                  />
+                  <input
+                    type="text"
+                    maxlength="1"
+                    class="otp_input"
+                    id="otp-6"
+                  />
+                </div>
+              </div>
+              <div class="mt-4">
+                <button
+                  type="button"
+                  class="btn btn-primary otp_button w-100"
+                  id="verify-btn"
+                >
+                  <b>Verify</b>
+                </button>
+              </div>
+              <p id="response-message" class="mt-3"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="url.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for OTP Verification -->
+    <script>
+      function getEmailFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("email");
+      }
+
+      if (getEmailFromUrl()) {
+        document
+          .getElementById("verify-btn")
+          .addEventListener("click", function () {
+            // Retrieve OTP from the inputs
+            const otp = [
+              document.getElementById("otp-1").value,
+              document.getElementById("otp-2").value,
+              document.getElementById("otp-3").value,
+              document.getElementById("otp-4").value,
+              document.getElementById("otp-5").value,
+              document.getElementById("otp-6").value,
+            ].join("");
+
+            const responseMessage = document.getElementById("response-message");
+
+            // Retrieve email from session storage
+            const email = getEmailFromUrl();
+            if (!email) {
+              responseMessage.innerText = "No email found....";
+              responseMessage.style.color = "red";
+              return;
+            }
+
+            // Send POST request to verify OTP
+            fetch(`${window.config.BACKEND_URL}/api/verify-otp/`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email: email,
+                otp: otp,
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                // Handle the response
+                if (
+                  data.message ===
+                  "OTP verified. You can now reset your password."
+                ) {
+                  responseMessage.innerText = "OTP verified successfully!";
+                  responseMessage.style.color = "green";
+                  // Redirect to the password reset page
+                  setTimeout(function () {
+                    window.location.href = "/login.html"; // Update this URL to match your actual reset password page
+                  }, 2000); // 2-second delay before redirection
+                } else {
+                  responseMessage.innerText = "Error: " + data.non_field_errors;
+                  responseMessage.style.color = "red";
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                responseMessage.innerText =
+                  "Failed to verify OTP. Please try again later.";
+                responseMessage.style.color = "red";
+              });
+          });
+      } else {
+        document
+          .getElementById("verify-btn")
+          .addEventListener("click", function () {
+            // Retrieve OTP from the inputs
+            const otp = [
+              document.getElementById("otp-1").value,
+              document.getElementById("otp-2").value,
+              document.getElementById("otp-3").value,
+              document.getElementById("otp-4").value,
+              document.getElementById("otp-5").value,
+              document.getElementById("otp-6").value,
+            ].join("");
+
+            const responseMessage = document.getElementById("response-message");
+
+            // Retrieve email from session storage
+            const email = sessionStorage.getItem("forgot_password_email");
+
+            if (!email) {
+              responseMessage.innerText = "No email found....";
+              responseMessage.style.color = "red";
+              return;
+            }
+
+            // Send POST request to verify OTP
+            fetch(`${window.config.BACKEND_URL}/api/verify-otp/`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email: email,
+                otp: otp,
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                // Handle the response
+                if (
+                  data.message ===
+                  "OTP verified. You can now reset your password."
+                ) {
+                  responseMessage.innerText = "OTP verified successfully!";
+                  responseMessage.style.color = "green";
+                  // Redirect to the password reset page
+                  setTimeout(function () {
+                    window.location.href = "/reset_password.html"; // Update this URL to match your actual reset password page
+                  }, 2000); // 2-second delay before redirection
+                } else {
+                  responseMessage.innerText = "Error: " + data.non_field_errors;
+                  responseMessage.style.color = "red";
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                responseMessage.innerText =
+                  "Failed to verify OTP. Please try again later.";
+                responseMessage.style.color = "red";
+              });
+          });
+      }
+    </script>
+  </body>
+</html>

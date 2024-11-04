@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        margin: 0;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        padding: 20px;
+        position: fixed;
+        height: 100%;
+      }
+      .sidebar h4 {
+        margin-bottom: 20px;
+      }
+      .sidebar .nav-link {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #333;
+        border-radius: 4px;
+      }
+      .sidebar .nav-link:hover {
+        background-color: #e9ecef;
+      }
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+        flex: 1;
+      }
+      .content-section {
+        display: none;
+      }
+      .content-section.active {
+        display: block;
+      }
+
+      body {
+        background-color: #f8f9fa;
+      }
+      .form-container {
+        background-color: #e9ecef;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      .form-select,
+      .form-control {
+        background-color: white;
+      }
+      h1,
+      h2 {
+        color: #6610f2;
+      }
+      .upload-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+      .theme-box {
+        height: 60px;
+        background-color: #e9ecef;
+        border-radius: 10px;
+      }
+      .custom-file-upload {
+        border: 1px solid #7749f8;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        color: #7749f8;
+        border-radius: 20px;
+      }
+      .custom-file-upload:hover {
+        background-color: #7749f8;
+        color: white;
+      }
+      textarea {
+        resize: none;
+      }
+
+      .upload-box {
+        width: 100%;
+        height: 150px;
+        background-color: #e7e5ff;
+        border: 2px dashed #7749f8;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .family-tree-container {
+        background-color: #e7e5ff;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .upload-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 10px;
+      }
+      .custom-file-upload {
+        background-color: #7749f8;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .model__lg {
+        max-width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4>User Dashboard</h4>
+      <a class="nav-link" href="#sidebar" onclick="showSection('sidebar')"
+        >Add Deceased</a
+      >
+      <a
+        class="nav-link"
+        href="#view"
+        onclick="showSection('view')"
+        id="view_deceased"
+        >View Deceased</a
+      >
+      <a
+        class="nav-link"
+        href="#update_profile"
+        onclick="showSection('update_profile')"
+        >Update Profile</a
+      >
+      <a
+        class="nav-link"
+        href="#viewreviews"
+        onclick="showSection('viewreviews')"
+        >View Reviews</a
+      >
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2>Welcome to the Dashboard</h2>
+
+      <!-- deceased Sections -->
+      <div id="sidebar" class="content-section">
+        <form id="signupForm" class="signup__form signup_form_mobile">
+          <div class="form-container">
+            <h2 class="mb-4">Required</h2>
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="firstName" class="form-label">First name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="middleName" class="form-label">Middle name</label>
+                <input type="text" class="form-control" id="middleName" />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <!-- Month Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="birthMonth" class="form-label">Date of birth</label>
+                <select class="form-select" id="birthMonth" required>
+                  <option value="" selected disabled>Select month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+
+              <!-- Date Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="birthDate" class="form-label">&nbsp;</label>
+                <select class="form-select" id="birthDate" required>
+                  <option value="" selected disabled>Select date</option>
+                  <!-- Add dates from 1 to 31 dynamically -->
+                  <script>
+                    const birthDateSelect =
+                      document.getElementById("birthDate");
+                    for (let i = 1; i <= 31; i++) {
+                      const option = document.createElement("option");
+                      option.value = i;
+                      option.textContent = i;
+                      birthDateSelect.appendChild(option);
+                    }
+                  </script>
+                </select>
+              </div>
+
+              <!-- Year Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="birthYear" class="form-label">&nbsp;</label>
+                <select class="form-select" id="birthYear" required>
+                  <option value="" selected disabled>Select year</option>
+                  <!-- Add years dynamically (e.g., from 1900 to current year) -->
+                  <script>
+                    const currentYear = new Date().getFullYear();
+                    const birthYearSelect =
+                      document.getElementById("birthYear");
+                    for (let year = currentYear; year >= 1900; year--) {
+                      const option = document.createElement("option");
+                      option.value = year;
+                      option.textContent = year;
+                      birthYearSelect.appendChild(option);
+                    }
+                  </script>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <!-- Month Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="deathMonth" class="form-label">Date of death</label>
+                <select class="form-select" id="deathMonth">
+                  <option value="" selected disabled>Select month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+
+              <!-- Date Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="deathDate" class="form-label">&nbsp;</label>
+                <select class="form-select" id="deathDate">
+                  <option value="" selected disabled>Select date</option>
+                  <!-- Add dates from 1 to 31 -->
+                  <script>
+                    const deathDateSelect =
+                      document.getElementById("deathDate");
+                    for (let i = 1; i <= 31; i++) {
+                      const option = document.createElement("option");
+                      option.value = i;
+                      option.textContent = i;
+                      deathDateSelect.appendChild(option);
+                    }
+                  </script>
+                </select>
+              </div>
+
+              <!-- Year Selection -->
+              <!-- Year Selection for Date of Death -->
+              <div class="col-md-4 mb-3">
+                <label for="deathYear" class="form-label">&nbsp;</label>
+                <select class="form-select" id="deathYear">
+                  <option value="" selected disabled>Select year</option>
+                  <!-- Add years dynamically (e.g., from 1900 to current year) -->
+                  <script>
+                    const currentYear1 = new Date().getFullYear();
+                    const deathYearSelect =
+                      document.getElementById("deathYear");
+                    for (let year = currentYear1; year >= 1900; year--) {
+                      const option = document.createElement("option");
+                      option.value = year;
+                      option.textContent = year;
+                      deathYearSelect.appendChild(option); // Append to deathYearSelect instead of birthYearSelect
+                    }
+                  </script>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <!-- Month Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="burialMonth" class="form-label"
+                  >Date of burial Month</label
+                >
+                <select class="form-select" id="burialMonth">
+                  <option value="" selected disabled>Select month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+
+              <!-- Date Selection -->
+              <div class="col-md-4 mb-3">
+                <label for="burialDate" class="form-label">&nbsp;</label>
+                <select class="form-select" id="burialDate">
+                  <option value="" selected disabled>Select date</option>
+                  <!-- Add dates from 1 to 31 -->
+                  <script>
+                    const burialDateSelect =
+                      document.getElementById("burialDate");
+                    for (let i = 1; i <= 31; i++) {
+                      const option = document.createElement("option");
+                      option.value = i;
+                      option.textContent = i;
+                      burialDateSelect.appendChild(option);
+                    }
+                  </script>
+                </select>
+              </div>
+
+              <!-- Year Selection -->
+              <!-- Year Selection for Date of Death -->
+              <div class="col-md-4 mb-3">
+                <label for="burialYear" class="form-label">&nbsp;</label>
+                <select class="form-select" id="burialYear">
+                  <option value="" selected disabled>Select year</option>
+                  <!-- Add years dynamically (e.g., from 1900 to current year) -->
+                  <script>
+                    const burialYearSelect2 = new Date().getFullYear();
+                    const burialYearSelect =
+                      document.getElementById("burialYear");
+                    for (let year = burialYearSelect2; year >= 1900; year--) {
+                      const option = document.createElement("option");
+                      option.value = year;
+                      option.textContent = year;
+                      burialYearSelect.appendChild(option); // Append to deathYearSelect instead of birthYearSelect
+                    }
+                  </script>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="relation" class="form-label"
+                >Who are you to Adam?</label
+              >
+              <select class="form-select" id="relation" required>
+                <option value="" selected disabled>Select option</option>
+                <option value="father">Father</option>
+                <option value="mother">Mother</option>
+                <option value="brother">Brother</option>
+                <option value="sister">Sister</option>
+                <option value="son">Son</option>
+                <option value="daughter">Daughter</option>
+                <option value="uncle">Uncle</option>
+                <option value="aunt">Aunt</option>
+                <option value="nephew">Nephew</option>
+                <option value="niece">Niece</option>
+                <option value="cousin">Cousin</option>
+                <option value="friend">Friend</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <h1 class="text-center mb-5 text-primary">Upload Image of Adam</h1>
+
+          <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+              <h5 class="mb-3">Upload image of adam</h5>
+              <p class="text-muted small">
+                This will be used throughout your personalized page for Adam
+                letting you add many data
+              </p>
+              <div class="upload-circle mb-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-person"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                  />
+                </svg>
+              </div>
+              <div class="text-center">
+                <label for="file-upload" class="custom-file-upload">
+                  Upload Image
+                </label>
+                <input id="file-upload" type="file" style="display: none" />
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h5 class="mb-3">Quote that represents Adam</h5>
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Write special words here..."
+              id="quote"
+            ></textarea>
+            <div class="text-end mt-2">
+              <small class="text-muted">words 0/100</small>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h5 class="mb-3">About Adam</h5>
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Write special words here..."
+              id="about"
+            ></textarea>
+            <div class="text-end mt-2">
+              <small class="text-muted">words 0/1000</small>
+            </div>
+          </div>
+          <div id="form-container" class="mb-4">
+            <div class="form-set mb-4">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="event-name" class="form-label">Event Name*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="event-name[]"
+                    placeholder="Enter event name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="event-date" class="form-label">Event Date*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="event-date[]"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">Upload Image 1*</label>
+                  <div
+                    class="upload-box"
+                    onclick="document.getElementById('image1-${index}').click();"
+                  >
+                    <div class="text-center">
+                      <span class="text-primary">Add photo</span>
+                      <input
+                        type="file"
+                        id="image1-${index}"
+                        name="image1[]"
+                        accept="image/*"
+                        style="display: none"
+                        onchange="handleFileUpload(this)"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">Upload Image 2*</label>
+                  <div
+                    class="upload-box"
+                    onclick="document.getElementById('image2-${index}').click();"
+                  >
+                    <div class="text-center">
+                      <span class="text-primary">Add photo</span>
+                      <input
+                        type="file"
+                        id="image2-${index}"
+                        name="image2[]"
+                        accept="image/*"
+                        style="display: none"
+                        onchange="handleFileUpload(this)"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">Upload Image 3*</label>
+                  <div
+                    class="upload-box"
+                    onclick="document.getElementById('image3-${index}').click();"
+                  >
+                    <div class="text-center">
+                      <span class="text-primary">Add photo</span>
+                      <input
+                        type="file"
+                        id="image3-${index}"
+                        name="image3[]"
+                        accept="image/*"
+                        style="display: none"
+                        onchange="handleFileUpload(this)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="brief-description" class="form-label"
+                  >Brief Description*</label
+                >
+                <textarea
+                  class="form-control"
+                  name="brief-description[]"
+                  rows="3"
+                  placeholder="Write from here..."
+                  required
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="add-more">
+            Add More
+          </button>
+
+          <h1 class="text-center mb-5 text-primary">Family Album</h1>
+          <div class="row mb-3">
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="family_album">Family Album</label>
+              <div
+                class="upload-box"
+                onclick="document.getElementById('family_album').click();"
+              >
+                <div class="text-center">
+                  <span class="text-primary">Add photo</span>
+                  <input
+                    type="file"
+                    id="family_album"
+                    name="family_album[]"
+                    accept="image/*"
+                    style="display: none"
+                    multiple
+                    onchange="updateImageCount()"
+                  />
+                </div>
+              </div>
+              <div id="image_count" class="mt-2 text-center text-primary"></div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+        </form>
+      </div>
+      <!-- end deceased -->
+      <!-- edit deceased start -->
+      <!-- Edit Modal -->
+      <div
+        class="modal fade"
+        id="editModal"
+        tabindex="-1"
+        aria-labelledby="editModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog model__lg">
+          <div class="modal-content model__lg">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">
+                Edit Deceased Record
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                id="deceasedEdit"
+                class="signup__form signup_form_mobile"
+                enctype="multipart/form-data"
+              >
+                <div class="form-container">
+                  <h2 class="mb-4">Required</h2>
+                  <div class="row mb-3">
+                    <div class="col-md-4 mb-3">
+                      <label for="firstName" class="form-label"
+                        >First name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editName"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="middleName" class="form-label"
+                        >Middle name</label
+                      >
+                      <input type="text" class="form-control" id="middleName" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="lastName" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lastName" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <!-- Month Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="birthMonth" class="form-label"
+                        >Date of birth</label
+                      >
+                      <select class="form-select" id="editbirthMonth" required>
+                        <option value="" selected disabled>Select month</option>
+                      </select>
+                    </div>
+
+                    <!-- Date Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="birthDate" class="form-label">&nbsp;</label>
+                      <select class="form-select" id="editbirthDate" required>
+                        <option value="" selected disabled>Select date</option>
+                      </select>
+                    </div>
+
+                    <!-- Year Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="birthYear" class="form-label">&nbsp;</label>
+                      <select class="form-select" id="editbirthYear" required>
+                        <option value="" selected disabled>Select year</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <!-- Month Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="deathMonth" class="form-label"
+                        >Date of death</label
+                      >
+                      <select class="form-select" id="editdeathMonth">
+                        <option value="" selected disabled>Select month</option>
+                      </select>
+                    </div>
+
+                    <!-- Date Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="deathDate" class="form-label">&nbsp;</label>
+                      <select class="form-select" id="editdeathDate">
+                        <option value="" selected disabled>Select date</option>
+                      </select>
+                    </div>
+
+                    <!-- Year Selection -->
+                    <!-- Year Selection for Date of Death -->
+                    <div class="col-md-4 mb-3">
+                      <label for="deathYear" class="form-label">&nbsp;</label>
+                      <select class="form-select" id="editdeathYear">
+                        <option value="" selected disabled>Select year</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <!-- Month Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="burialMonth" class="form-label"
+                        >Date of burial Month</label
+                      >
+                      <select class="form-select" id="editburialMonth">
+                        <option value="" selected disabled>Select month</option>
+                      </select>
+                    </div>
+
+                    <!-- Date Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="burialDate" class="form-label">&nbsp;</label>
+                      <select class="form-select" id="editburialDate">
+                        <option value="" selected disabled>Select Date</option>
+                      </select>
+                    </div>
+
+                    <!-- Year Selection -->
+                    <div class="col-md-4 mb-3">
+                      <label for="burialYear" class="form-label">&nbsp;</label>
+                      <select class="form-select" id="editburialYear">
+                        <option value="" selected disabled>Select year</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="relation" class="form-label"
+                      >Who are you to Adam?</label
+                    >
+                    <select class="form-select" id="editRelationship" required>
+                      <option value="" selected disabled>Select option</option>
+                      <option value="father">Father</option>
+                      <option value="mother">Mother</option>
+                      <option value="brother">Brother</option>
+                      <option value="sister">Sister</option>
+                      <option value="son">Son</option>
+                      <option value="daughter">Daughter</option>
+                      <option value="uncle">Uncle</option>
+                      <option value="aunt">Aunt</option>
+                      <option value="nephew">Nephew</option>
+                      <option value="niece">Niece</option>
+                      <option value="cousin">Cousin</option>
+                      <option value="friend">Friend</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <h1 class="text-center mb-5 text-primary">
+                  Upload Image of Adam
+                </h1>
+
+                <div class="row mb-5">
+                  <div class="col-md-6 mb-4">
+                    <h5 class="mb-3">Upload image of adam</h5>
+                    <p class="text-muted small">
+                      This will be used throughout your personalized page for
+                      Adam letting you add many data
+                    </p>
+                    <div class="upload-circle mb-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        class="bi bi-person"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="text-center">
+                      <label for="file-upload" class="custom-file-upload">
+                        Upload Image
+                      </label>
+                      <input
+                        id="editHeadshot"
+                        type="file"
+                        style="display: none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-5">
+                  <h5 class="mb-3">Quote that represents Adam</h5>
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    placeholder="Write special words here..."
+                    id="editQuote"
+                  ></textarea>
+                  <div class="text-end mt-2">
+                    <small class="text-muted">words 0/100</small>
+                  </div>
+                </div>
+
+                <div class="mb-5">
+                  <h5 class="mb-3">About Adam</h5>
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    placeholder="Write special words here..."
+                    id="editAbout"
+                  ></textarea>
+                  <div class="text-end mt-2">
+                    <small class="text-muted">words 0/1000</small>
+                  </div>
+                </div>
+
+                <div id="form-container1" class="mb-4"></div>
+                <button type="button" class="btn btn-primary" id="add-more-1">
+                  Add More
+                </button>
+
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- edit deceased end -->
+      <!-- view deceased start -->
+
+      <div id="view" class="content-section">
+        <table id="deceased-table" class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Date of Birth</th>
+              <th>Date of Death</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+      <!-- view deceased end -->
+
+      <!-- update profile -->
+      <div id="update_profile" class="content-section">
+        <form
+          id="updateprofileuser"
+          class="signup__form signup_form_mobile"
+          enctype="multipart/form-data"
+        >
+          <div class="form-container">
+            <h2 class="mb-4">Required</h2>
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="username" class="form-label">Name</label>
+                <input type="text" class="form-control" id="username" />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="username" class="form-label">Contact no</label>
+                <input type="text" class="form-control" id="contact_no" />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="username" class="form-label">Address</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="address"
+                ></textarea>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" />
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="old_password" class="form-label"
+                  >Old Password</label
+                >
+                <input type="password" class="form-control" id="old_password" />
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="new_password" class="form-label"
+                  >New Password</label
+                >
+                <input type="password" class="form-control" id="new_password" />
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="confirm_password" class="form-label"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirm_password"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Update</button>
+            <button
+              type="button"
+              class="btn btn-danger btn-lg"
+              id="deleteAccount"
+            >
+              Delete Account
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- end update profile here -->
+
+      <div id="viewreviews" class="content-section">
+        <table id="reviews-table" class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Deceased Name</th>
+              <th>Date</th>
+              <th>Title 1</th>
+              <th>Image</th>
+              <th>Title 2</th>
+              <th>Image</th>
+              <th>Title 3</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="url.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="js/user.js"></script>
+
+    <!-- JavaScript to fetch users and populate the select field -->
+    <script>
+      function updateImageCount() {
+        const fileInput = document.getElementById("family_album");
+        const imageCountDisplay = document.getElementById("image_count");
+        const fileCount = fileInput.files.length;
+
+        // Update the display with the number of selected images
+        imageCountDisplay.textContent =
+          fileCount > 0 ? `${fileCount} images selected` : "";
+      }
+
+      // Function to fetch users from the API
+      function fetchUsers() {
+        // Assume the access token is stored in localStorage or sessionStorage
+        const accessToken =
+          localStorage.getItem("access_token") ||
+          sessionStorage.getItem("access_token");
+
+        // Check if the accessToken exists
+        if (!accessToken) {
+          console.error("Access token not found. Please log in.");
+          return;
+        }
+      }
+
+      // Call the fetchUsers function when the form is loaded
+      document.addEventListener("DOMContentLoaded", fetchUsers);
+
+      function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll(".content-section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        // Show the selected section
+        document.getElementById(sectionId).classList.add("active");
+      }
+
+      let index = 0; // To track the index for unique IDs
+      document
+        .getElementById("add-more")
+        .addEventListener("click", function () {
+          index++;
+          const formSet = `
+      <div class="form-set mb-4">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="event-name" class="form-label">Event Name*</label>
+            <input type="text" class="form-control" name="event-name[]" placeholder="Enter event name" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="event-date" class="form-label">Event Date*</label>
+            <input type="text" class="form-control" name="event-date[]" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Upload Image 1*</label>
+            <div class="upload-box" onclick="document.getElementById('image1-${index}').click();">
+              <div class="text-center">
+                <span class="text-primary">Add photo</span>
+                <input type="file" id="image1-${index}" name="image1[]" accept="image/*" style="display: none;" onchange="handleFileUpload(this)">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Upload Image 2*</label>
+            <div class="upload-box" onclick="document.getElementById('image2-${index}').click();">
+              <div class="text-center">
+                <span class="text-primary">Add photo</span>
+                <input type="file" id="image2-${index}" name="image2[]" accept="image/*" style="display: none;" onchange="handleFileUpload(this)">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Upload Image 3*</label>
+            <div class="upload-box" onclick="document.getElementById('image3-${index}').click();">
+              <div class="text-center">
+                <span class="text-primary">Add photo</span>
+                <input type="file" id="image3-${index}" name="image3[]" accept="image/*" style="display: none;" onchange="handleFileUpload(this)">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="brief-description" class="form-label">Brief Description*</label>
+          <textarea class="form-control" name="brief-description[]" rows="3" placeholder="Write from here..." required></textarea>
+        </div>
+      </div>
+    `;
+          const container = document.getElementById("form-container");
+          container.insertAdjacentHTML("beforeend", formSet);
+        });
+
+      function handleFileUpload(input) {
+        const fileName = input.files[0] ? input.files[0].name : "";
+        input.previousElementSibling.textContent = fileName || "Add photo";
+      }
+    </script>
+  </body>
+</html>

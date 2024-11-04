@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+.modal-dialog {
+  max-width: 90%;
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+}
+body {
+  overflow-x: hidden !important;
+  font-family: "Poppins";
+}
+.navbar__bg {
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 24px 0px rgba(151, 71, 255, 0.25);
+}
+.navbar__ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.ul__image {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 100px !important;
+}
+
+.add_to_cart_btn {
+  width: 110px;
+  height: 35px;
+  border-radius: 100px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Hover effect */
+.add_to_cart_btn:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+.custom-border {
+  border-radius: 20px;
+  background: #faf9ff;
+}
+.qr-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.product-image {
+  border-radius: 20px;
+}
+.thumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cart_product_name {
+  color: var(--mid-shade, #9373ff);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 60;
+}
+.cart_product_para {
+  color: var(--black-2, #2b2c2c);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+}
+.add_to_cart_btn1 {
+  width: 290px;
+  border-radius: 100px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: #fff;
+  padding: 10px 20px;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Hover effect */
+.add_to_cart_btn1:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+.add_to_cart_btn2 {
+  width: 290px;
+  border-radius: 50px;
+  background: var(--lighter-shade, #f2f0ff);
+  box-shadow: 4px 4px 12px 0px rgba(151, 71, 255, 0.25);
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Hover effect */
+.add_to_cart_btn2:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+.cart__h3 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: #9373ff;
+}
+.cart__p {
+  width: 50%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #2b2c2c;
+}
+.cart__box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.box {
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 308px;
+  height: auto;
+  color: #333; /* Changed to a darker color for better readability */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 30px;
+  border: 1px solid var(--light-shade, #d4cdff);
+  background: var(--lighter-shade, #f2f0ff);
+  box-shadow: 0px 4px 24px 0px rgba(151, 71, 255, 0.15);
+}
+
+/* Hover effect */
+.box:hover {
+  cursor: pointer;
+  border: 1px solid #9747ff; /* Darken border on hover */
+  transform: scale(1.05); /* Slightly increase size */
+  background: #f2f0ff; /* Change background color */
+  box-shadow: 0px 6px 30px 0px rgba(151, 71, 255, 0.3); /* Stronger shadow */
+}
+
+.box__1 {
+  background-color: #ffffff;
+}
+
+.box-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.box-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #898a8a;
+}
+
+.contact-section {
+  background-color: #f8f7ff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  padding: 40px;
+}
+
+.image-wrapper {
+  position: relative;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.landscape-image {
+  width: 100%;
+  border-radius: 0 20px 20px 0;
+  object-fit: cover;
+}
+
+.portrait-image {
+  position: absolute;
+  bottom: 31%;
+  right: 89%;
+  width: 192px;
+  height: 192px;
+  border-radius: 20px;
+  object-fit: cover;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  transform: rotate(-5deg);
+  flex-shrink: 0;
+}
+
+.btn-custom {
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.btn-whatsapp {
+  background-color: #6c5ce7;
+  border-color: #6c5ce7;
+}
+
+.btn-mail {
+  background-color: #6c5ce7;
+  border-color: #6c5ce7;
+}
+.review_start__img {
+  position: absolute;
+  top: 0;
+  right: 213px;
+}
+/* Remove default caret icon */
+.accordion-button::after {
+  display: none; /* Hide the default Bootstrap icon */
+}
+.dearest_search_btn {
+  width: 110px;
+  height: 35px;
+  border-radius: 100px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+/* Hover effect */
+.dearest_search_btn:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+.product_dollar {
+  color: var(--mid-shade, #9373ff);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 130% */
+  letter-spacing: -0.4px;
+}
+.text__size {
+  font-size: 20px;
+}
+.hero_section__shipping {
+  color: var(--black-4, #898a8a);
+
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer_start {
+  background: linear-gradient(to right, #e9e4ff 100%, #b6a5ff 0%);
+  padding: 50px;
+}
+.footer_h4 {
+  color: #131415;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+.footer_ul li a {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 38.2px;
+  color: #717273;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 20px;
+  }
+
+  .portrait-image {
+    width: 100px;
+    height: 100px;
+    bottom: -10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar__ul {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,527 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  overflow-x: hidden !important;
+  font-family: "Poppins";
+}
+.navbar__bg {
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 24px 0px rgba(151, 71, 255, 0.25);
+}
+.navbar__ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.ul__image {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 100px !important;
+}
+
+.add_to_cart_btn {
+  width: 130px;
+  /* height: 35px; */
+  border-radius: 100px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: #fff;
+  padding: 10px 10px;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+/* Hover effect */
+.add_to_cart_btn:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+.hero_section__bg {
+  background: linear-gradient(to right, #e9e4ff 100%, #b6a5ff 0%);
+}
+
+.hero_section {
+  padding-left: 10px;
+  padding-top: 23px;
+  height: auto;
+  min-height: 75vh;
+}
+
+.hero_section__h1 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -1px;
+}
+
+.hero_section__p {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.memories,
+.alive {
+  color: #5702ff;
+}
+
+.her0_section__in_jsut {
+  color: #9373ff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.hero_section__dollar {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.hero_section__shipping {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.hero_section__btn {
+  width: 150px;
+  height: 40px;
+}
+
+.hero_section__300 {
+  color: #5702ff;
+  margin-bottom: 0px;
+}
+
+.hero_section__happy {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #717273;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+}
+
+.modal-dialog {
+  max-width: 90%;
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+}
+
+.honor_section {
+  margin-top: 20px;
+}
+
+.honor_section__margin {
+  margin-top: 50px;
+  color: #2b2c2c;
+}
+
+.honor_section__margin__h3 {
+  margin-top: 30px;
+}
+
+.honor_section__h3 {
+  font-size: 1.8rem;
+}
+.honor_section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.celeberating__h3 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: #9373ff;
+}
+
+.celeberating__p {
+  width: 50%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #2b2c2c;
+}
+
+.box {
+  border-radius: 15px;
+  border: 1px solid #d4cdff;
+  background: var(--white, #fff);
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 308px;
+  height: auto;
+  color: #333; /* Changed to a darker color for better readability */
+  box-shadow: 0px 4px 24px 0px rgba(151, 71, 255, 0.15);
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.box:hover {
+  cursor: pointer;
+  border: 1px solid #9747ff; /* Darken border on hover */
+  transform: scale(1.05); /* Slightly increase size */
+  background: #f2f0ff; /* Change background color */
+  box-shadow: 0px 6px 30px 0px rgba(151, 71, 255, 0.3); /* Stronger shadow */
+}
+
+.box__1 {
+  background-color: #ffffff;
+}
+
+.box-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.box-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #898a8a;
+}
+
+.celeberating__button {
+  width: 100%;
+  max-width: 319px;
+  height: 50px;
+}
+
+.process_start {
+  /* background: linear-gradient(to right, #dcd7f5 100%, #9d8ecb 0%); */
+  background-color: #f2f0ff;
+  box-shadow: 0px 4px 24px 0px rgba(151, 71, 255, 0.15);
+}
+
+.review_start__img {
+  position: absolute;
+  top: 0;
+  right: 213px;
+}
+
+.pricing-content {
+  position: relative;
+}
+.pricing_design {
+  position: relative;
+  margin: 0px 15px;
+}
+.pricing_design .single-pricing {
+  background: #4801d6;
+  padding: 60px 40px;
+  border-radius: 30px;
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.2);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.pricing_design .single-pricing:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0 15px 30px rgba(0, 64, 128, 0.3); /* Enhance shadow */
+  color: #fff;
+}
+.pricing_design .single-pricing:hover:before {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent overlay */
+}
+.pricing_design:hover .price_btn {
+  background-color: #fff;
+  color: #007bff;
+}
+.pricing_design .single-pricing:before {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px 18px 190px 18px;
+  border: 1px solid #eee;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.price-head h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+}
+.price-head h1 {
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.single-pricing ul {
+  list-style: none;
+  margin-top: 30px;
+}
+.single-pricing ul li {
+  line-height: 36px;
+}
+.single-pricing ul li i {
+  background: #554c86;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 6px;
+}
+
+.price_btn {
+  background: #5702ff;
+  padding: 10px 30px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 20px;
+  transition: background 0.5s ease, transform 0.5s ease;
+}
+.price_btn:hover {
+  background: #0aa1d6;
+  transform: scale(1.05); /* Slightly scale up button */
+}
+a {
+  text-decoration: none;
+}
+
+.section-title {
+  margin-bottom: 60px;
+}
+.custom-map {
+  width: 100%;
+  height: 350px;
+  border-radius: 50px;
+}
+/* Remove default caret icon */
+.accordion-button::after {
+  display: none; /* Hide the default Bootstrap icon */
+}
+
+/* Custom icon toggle styles */
+.icon-toggle {
+  font-weight: bold;
+  font-size: 18px;
+}
+.footer_start {
+  background: linear-gradient(to right, #e9e4ff 100%, #b6a5ff 0%);
+  padding: 50px;
+}
+.footer_h4 {
+  color: #131415;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+.footer_ul li a {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 38.2px;
+  color: #717273;
+  text-decoration: none;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.4s ease; /* Smooth transition for hover effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+  overflow: hidden; /* Ensure content stays within card */
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05); /* Slightly increase the card size */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  cursor: pointer;
+}
+
+/* Card image hover effect */
+.card-img-top {
+  transition: transform 0.3s ease; /* Smooth image movement on hover */
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1); /* Slightly enlarge the image */
+}
+
+.process_start__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+.card-img-top {
+  height: 200px; /* Adjust height of the image */
+  object-fit: cover; /* Ensure images maintain aspect ratio */
+}
+.text__size {
+  font-size: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero_section__h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .hero_section__p {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero_section__btn {
+    width: 200px;
+    height: 40px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .navbar-toggler {
+    margin-top: 10px;
+  }
+
+  .navbar__ul {
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .celeberating__box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .honor_section__margin__h3 {
+    text-align: center;
+  }
+  .process_start__card {
+    margin-bottom: 20px;
+  }
+  .review__section {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar__ul {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero_section__h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .hero_section__p {
+    width: 90%;
+  }
+
+  .hero_section__btn {
+    width: 200px;
+    height: 35px;
+  }
+
+  .play-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .celeberating__h3 {
+    font-size: 24px;
+  }
+
+  .celeberating__p {
+    font-size: 12px;
+  }
+}
+
+/* Custom CSS to handle visibility on small screens */
+.d-md-none {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .d-md-none {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Your styles for tablets go here */
+  .navbar__ul {
+    font-size: 10px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1366px) {
+  /* Your styles for 1280px width devices */
+  .navbar__ul {
+    font-size: 12px;
+  }
+}

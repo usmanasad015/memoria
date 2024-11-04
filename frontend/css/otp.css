@@ -1,0 +1,159 @@
+/* OTP design */
+html,
+body {
+  height: 100%;
+  font-family: "Poppins";
+}
+
+.otp__col_6 {
+  color: rgba(255, 255, 255, 1);
+}
+.padding_bg {
+  padding: 40px;
+}
+
+.otp_h2 {
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: rgba(62, 3, 178, 1);
+}
+
+.otp_p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(137, 138, 138, 1);
+}
+
+.otp_label {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: rgba(125, 135, 145, 1);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.otp-input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.otp_input {
+  border: none;
+  border-bottom: 2px solid rgba(62, 3, 178, 1);
+  width: 14%;
+  height: 2.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+  background: none;
+}
+
+.otp_button {
+  width: 100%;
+  height: 51px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: aliceblue;
+}
+
+.otp__image__parent {
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.otp__image__child__1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.otp__image__child__2 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%;
+  height: auto;
+}
+
+.otp_image__child_text {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  text-align: center;
+}
+
+.otp__md__7 {
+  background: linear-gradient(270deg, #f8f9fe 0%, #f8f9fd 100%);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.otp__form_container {
+  width: 100%;
+  max-width: 472px;
+  padding: 2rem;
+  margin-top: 100px;
+}
+
+/* Media queries for small devices */
+@media (max-width: 768px) {
+  #otp-form {
+    margin-top: 100px;
+  }
+  .otp__md__7 {
+    border-radius: 20px;
+    min-height: 100vh;
+  }
+
+  .otp_h2 {
+    font-size: 2rem;
+  }
+
+  .otp_p {
+    font-size: 0.9rem;
+  }
+
+  .otp_label {
+    font-size: 1rem;
+  }
+
+  .otp__form_container {
+    padding: 1.5rem;
+    margin-top: -50px; /* Adjust this value to move the form higher */
+  }
+
+  .otp_input {
+    width: 13%;
+    font-size: 1rem;
+  }
+  .padding_bg {
+    padding: 0;
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 576px) {
+  .otp_h2 {
+    font-size: 1.75rem;
+  }
+
+  .otp_button {
+    height: 45px;
+  }
+
+  .otp__form_container {
+    padding: 1rem;
+    margin-top: -80px; /* Further adjust for smaller screens */
+  }
+
+  .otp_input {
+    width: 12%;
+    font-size: 0.9rem;
+  }
+}

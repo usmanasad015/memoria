@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link href="css/sample.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Navbar -->
+
+  <!-- Centered navbar start -->
+  <nav class="navbar navbar-expand-lg mt-4">
+    <!-- Container wrapper -->
+    <div class="container d-flex justify-content-center align-items-center">
+      <!-- Navbar collapse content -->
+      <div id="">
+        <!-- Centered navigation links -->
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto navbar__ul d-flex flex-row">
+          <li class="nav-item">
+            <a class="nav-link" href="#about1">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#timeline">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#note">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#family">Family Tree</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+
+  <!-- centered navbar end -->
+
+  <!-- new section start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="" class="img-fluid" alt="Woman" id="deceasedimage" style="width: 90%;" />
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h3 class="new_section__loving">In Loving memory of</h3>
+        <h3 class="new_section__alberto"></h3>
+        <p>
+          <span class="date" id="dateofbirth"></span> <span class="lightgrey">to</span> <span class="class="
+            date" id="dateofdeath"></span>
+          <img src="static/icons/location-04.svg" />
+          <span class="lightgrey">Publeo maxico</span>
+        </p>
+        <div class="icon_text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="25" viewBox="0 0 36 25" fill="none"
+            style="margin-left: -39px;">
+            <path
+              d="M20 15C20 12.4 20.4 10.1667 21.2 8.3C22 6.36667 23.0333 4.8 24.3 3.6C25.5667 2.33334 27 1.43333 28.6 0.9C30.2667 0.299999 31.9 0 33.5 0V3.5C31.7667 3.5 30.1333 4.1 28.6 5.3C27.1333 6.43333 26.2667 8 26 10C26.2 9.93334 26.4333 9.86667 26.7 9.8C26.9 9.73333 27.1333 9.66667 27.4 9.6C27.7333 9.53334 28.1 9.5 28.5 9.5C30.5 9.5 32.1667 10.2667 33.5 11.8C34.8333 13.2667 35.5 15 35.5 17C35.5 19 34.8 20.7667 33.4 22.3C32.0667 23.7667 30.2667 24.5 28 24.5C25.4667 24.5 23.5 23.5667 22.1 21.7C20.7 19.7667 20 17.5333 20 15ZM0 15C0 12.4 0.4 10.1667 1.2 8.3C2 6.36667 3.03333 4.8 4.3 3.6C5.56667 2.33334 7 1.43333 8.6 0.9C10.2667 0.299999 11.9 0 13.5 0V3.5C11.7667 3.5 10.1333 4.1 8.6 5.3C7.13333 6.43333 6.26667 8 6 10C6.2 9.93334 6.43333 9.86667 6.7 9.8C6.9 9.73333 7.13333 9.66667 7.4 9.6C7.73333 9.53334 8.1 9.5 8.5 9.5C10.5 9.5 12.1667 10.2667 13.5 11.8C14.8333 13.2667 15.5 15 15.5 17C15.5 19 14.8 20.7667 13.4 22.3C12.0667 23.7667 10.2667 24.5 8 24.5C5.46667 24.5 3.5 23.5667 2.1 21.7C0.7 19.7667 0 17.5333 0 15Z"
+              fill="#F2F0FF" />
+          </svg>
+          <span style="font-size: 17px;" id="quote"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="25" viewBox="0 0 36 25" fill="none">
+            <path
+              d="M15.5 15C15.5 12.4 15.1 10.1667 14.3 8.3C13.5 6.36667 12.4667 4.8 11.2 3.6C9.93333 2.33334 8.5 1.43333 6.9 0.9C5.23333 0.299999 3.59999 0 2 0V3.5C3.73333 3.5 5.36666 4.1 6.9 5.3C8.36666 6.43333 9.23333 8 9.5 10C9.3 9.93334 9.06666 9.86667 8.8 9.8C8.6 9.73333 8.36666 9.66667 8.1 9.6C7.76666 9.53334 7.4 9.5 7 9.5C5 9.5 3.33333 10.2667 2 11.8C0.66666 13.2667 -3.8147e-06 15 -3.8147e-06 17C-3.8147e-06 19 0.699997 20.7667 2.1 22.3C3.43333 23.7667 5.23333 24.5 7.5 24.5C10.0333 24.5 12 23.5667 13.4 21.7C14.8 19.7667 15.5 17.5333 15.5 15ZM35.5 15C35.5 12.4 35.1 10.1667 34.3 8.3C33.5 6.36667 32.4667 4.8 31.2 3.6C29.9333 2.33334 28.5 1.43333 26.9 0.9C25.2333 0.299999 23.6 0 22 0V3.5C23.7333 3.5 25.3667 4.1 26.9 5.3C28.3667 6.43333 29.2333 8 29.5 10C29.3 9.93334 29.0667 9.86667 28.8 9.8C28.6 9.73333 28.3667 9.66667 28.1 9.6C27.7667 9.53334 27.4 9.5 27 9.5C25 9.5 23.3333 10.2667 22 11.8C20.6667 13.2667 20 15 20 17C20 19 20.7 20.7667 22.1 22.3C23.4333 23.7667 25.2333 24.5 27.5 24.5C30.0333 24.5 32 23.5667 33.4 21.7C34.8 19.7667 35.5 17.5333 35.5 15Z"
+              fill="#F2F0FF" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- new section end -->
+
+  <!-- about start -->
+  <div class="container mt-5" id="about1">
+    <h3 class="text-center sample_h3">About</h3>
+    <p class="text-center sample_p mb-4" id="about">
+    </p>
+  </div>
+  <!-- about end -->
+
+  <!-- Timeline start -->
+  <div class="container mt-5" id="timeline">
+    <h3 class="text-center sample_h3">Timeline</h3>
+    <div class="row mt-5">
+      <!-- Left side with numbers and vertical lines -->
+      <div class="col-md-2 col-2 d-flex flex-column align-items-center">
+        <!-- Number box -->
+        <div class="sample_number"></div>
+
+        <!-- Vertical line with centered icon -->
+        <div class="timeline-line">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+            class="timeline-icon">
+            <circle cx="10" cy="10" r="10" fill="#F2F0FF" />
+          </svg>
+        </div>
+
+        <div class="sample_number"></div>
+
+        <!-- Vertical line with centered icon -->
+        <div class="timeline-line">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+            class="timeline-icon">
+            <circle cx="10" cy="10" r="10" fill="#F2F0FF" />
+          </svg>
+        </div>
+
+        <div class="sample_number"></div>
+      </div>
+
+      <!-- Right side with content -->
+      <div class="col-md-10 col-10">
+        <div>
+          <p></p>
+          <div class="row d-flex justify-content-between">
+            <div class="col-md-4 sample_timeline ">
+              <img src="" class="img-fluid" />
+            </div>
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <p></p>
+          <div class="row d-flex justify-content-between">
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <p></p>
+          <div class="row d-flex justify-content-between">
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+            <div class="col-md-4 sample_timeline">
+              <img src="" class="img-fluid" />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Timeline end -->
+
+
+
+  <!-- Family album start -->
+  <div class="container mt-5" id="gallery">
+    <h3 class="text-center sample_h3 mt-5">Family Album</h3>
+    <div class="row" id="album-row">
+        <!-- Dynamic content will be inserted here -->
+    </div>
+</div>
+  <!-- Family album end -->
+
+
+
+  <!-- Guest book start -->
+  <div class="container" id="note">
+    <div class="row align-items-end">
+      <!-- Heading (Centered) -->
+      <div class="col text-center">
+        <h3 class="sample_h3 mt-5">Guest Book</h3>
+      </div>
+
+      <!-- Button to trigger the modal -->
+      <div class="col-auto ms-auto">
+        <button type="button" class="btn btn-sm add_to_cart_btn hero_section__btn mt-2 login_button"
+          data-bs-toggle="modal" data-bs-target="#noteModal" id="leaveNoteBtn">
+          <b>Leave a note</b>
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="noteModalLabel">Leave a Note</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="noteForm" enctype="multipart/form-data">
+                <!-- Title 1 and Image 1 -->
+                <div class="mb-3">
+                  <label for="image1Title" class="form-label">Title 1</label>
+                  <input type="text" class="form-control" id="image1Title" placeholder="Enter title 1" required>
+                </div>
+                <div class="mb-3">
+                  <label for="image1" class="form-label">Image 1</label>
+                  <input type="file" class="form-control" id="image1" accept="image/*" required>
+                </div>
+      
+                <!-- Title 2 and Image 2 -->
+                <div class="mb-3">
+                  <label for="image2Title" class="form-label">Title 2</label>
+                  <input type="text" class="form-control" id="image2Title" placeholder="Enter title 2" required>
+                </div>
+                <div class="mb-3">
+                  <label for="image2" class="form-label">Image 2</label>
+                  <input type="file" class="form-control" id="image2" accept="image/*" required>
+                </div>
+      
+                <!-- Title 3 and Image 3 -->
+                <div class="mb-3">
+                  <label for="image3Title" class="form-label">Title 3</label>
+                  <input type="text" class="form-control" id="image3Title" placeholder="Enter title 3" required>
+                </div>
+                <div class="mb-3">
+                  <label for="image3" class="form-label">Image 3</label>
+                  <input type="file" class="form-control" id="image3" accept="image/*" required>
+                </div>
+    
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div id="review-container" class="row sample__md__row d-flex  mt-5"></div>
+
+  </div>
+  <!-- Guest book end -->
+
+  <!-- Family tree start here -->
+  <div class="container mt-5" id="family">
+    <h1 class="text-center mb-4" style="color: #6c5ce7;">Family Tree</h1>
+    <div class="family-tree">
+      <div class="generation">
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+      </div>
+      <div class="tree-line"></div>
+      <div class="generation tree-branch">
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+      </div>
+      <div class="tree-line"></div>
+      <div class="generation tree-branch">
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+        <div class="member">
+          <img src="static/images/Ellipse 14.svg" alt="Member">
+          <div class="name">Member name</div>
+          <div class="date">03-04-1964</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Family tree end here -->
+
+  <!--Footer section start-->
+  <div id="footer-placeholder"></div>
+  <!--Footer section end-->
+  <script src="js/common.js"></script>
+  <!--Footer section end-->
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  <script src="url.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Configuration loaded", window.config);
+      updateCartCount();
+    });
+  </script>
+  <script src="js/cart_common.js"></script>
+  <script>
+    // Cart functionality
+
+  // Function to extract deceased_id from the URL
+  function getDeceasedId() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');  // Get the 'id' parameter from the URL
+  }
+
+  async function fetchFamilyAlbum(deceasedId) {
+        try {
+            const response = await fetch(`http://127.0.0.1:8001/api/family-album/${deceasedId}/`);
+            const albums = await response.json();
+
+            const albumRow = document.getElementById('album-row');
+            albumRow.innerHTML = '';  // Clear existing content
+
+            // Group images into columns
+            const columns = [[], [], []];  // Create three columns
+
+            albums.forEach((album, index) => {
+                const colIndex = index % 3; // Get the column index
+                columns[colIndex].push(album.image);
+            });
+
+            columns.forEach((columnImages, colIndex) => {
+                const colDiv = document.createElement('div');
+                colDiv.className = 'col-4 d-flex flex-column align-items-center img-container1';
+
+                columnImages.forEach(imageSrc => {
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = `Image ${colIndex + 1}`;
+                    img.className = colIndex === 0 ? 'mb-2' : ''; // Add margin to the first image
+                    colDiv.appendChild(img);
+                });
+
+                albumRow.appendChild(colDiv);
+            });
+        } catch (error) {
+            console.error('Error fetching family album:', error);
+        }
+    }
+
+        // Fetch family album on page load
+        window.onload = function() {
+        const deceasedId = getDeceasedId();
+        if (deceasedId) {
+            fetchFamilyAlbum(deceasedId);
+        }
+    };
+
+  // Handle form submission
+  document.getElementById('noteForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    // Get the deceased ID from the URL
+    const deceasedId = getDeceasedId();
+    if (!deceasedId) {
+        alert("Deceased ID not found in URL");
+        return;
+    }
+
+    // Replace with your actual access token
+    const accessToken = sessionStorage.getItem('access_token');
+    const user_id = sessionStorage.getItem('user_id');
+
+    // Prepare the form data
+    const formData = new FormData();
+
+    // Add text data
+    formData.append('deceased', deceasedId);
+    formData.append('created_by', user_id);
+    formData.append('created_at', new Date().toISOString());
+
+    // Add titles and images to formData
+    formData.append('textfield1', document.getElementById('image1Title').value);
+    formData.append('imagefield1', document.getElementById('image1').files[0]);  // Image 1 file
+
+    formData.append('textfield2', document.getElementById('image2Title').value);
+    formData.append('imagefield2', document.getElementById('image2').files[0]);  // Image 2 file
+
+    formData.append('textfield3', document.getElementById('image3Title').value);
+    formData.append('imagefield3', document.getElementById('image3').files[0]);  // Image 3 file
+
+    try {
+        // Call the API
+        const response = await fetch(`http://127.0.0.1:8001/api/deceased/${deceasedId}/reviews/add/`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+                // Content-Type should not be set here, as FormData will automatically set it with the correct boundary
+            },
+            body: formData  // Use formData directly for multipart data
+        });
+
+        if (response.ok) {
+            // Handle successful submission
+            alert('Review submiteed successfully..!');
+            document.getElementById('noteForm').reset();  // Reset the form after successful submission
+        } else {
+            // Handle errors
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message || 'An error occurred'}`);
+        }
+    } catch (error) {
+        // Handle network errors
+        console.error('Error:', error);
+        alert('Failed to submit the note. Please try again later.');
+    }
+});
+
+
+    // Function to load the navbar HTML
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch((error) => console.error("Error loading Footer:", error));
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const leaveNoteButton = document.querySelector(".login_button");
+
+      leaveNoteButton.addEventListener("click", function () {
+        const accessToken = sessionStorage.getItem("access_token");
+
+        if (accessToken) {
+
+        } else {
+
+          window.location.href = "login.html"; // Redirect to login page
+        }
+      });
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    // Replace this with your actual API endpoint
+const apiUrl = `http://127.0.0.1:8001/api/deceased/${id}/`;
+
+
+fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+        // 'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log("data received", data);
+    // Populate your HTML elements with data
+    document.querySelector('.new_section__alberto').innerText = data.name; // Update with the correct field from your API
+    document.getElementById('dateofbirth').innerText = data.date_of_birth; // Update with the correct field from your API
+    document.getElementById('dateofdeath').innerText = data.date_of_death
+    document.getElementById('deceasedimage').src = data.headshot
+    document.getElementById('quote').innerHTML = data.quote
+    document.getElementById('about').innerHTML = data.about
+    // Populate other fields as needed
+})
+.catch(error => {
+    console.error('Error fetching data:', error);
+});
+
+
+
+const timelineApiUrl = `http://127.0.0.1:8001/api/details/${id}/`;
+fetch(timelineApiUrl, {
+    method: 'GET',
+    headers: {
+        // 'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(timelineData => {
+    console.log("Timeline data received", timelineData);
+
+    // Selecting the left and right containers
+    const leftSide = document.querySelector('.col-md-2.col-2.d-flex.flex-column.align-items-center');
+    const rightSide = document.querySelector('.col-md-10.col-10');
+
+    // Clear the existing static content
+    leftSide.innerHTML = '';
+    rightSide.innerHTML = '';
+
+    // Base URL for the images
+    const baseURL = 'http://127.0.0.1:8001';  // Adjust this if necessary
+
+    // Loop through the timeline data to create dynamic entries
+    timelineData.forEach(item => {
+        // Dynamic content for the left side (year and vertical lines)
+        const yearElement = document.createElement('div');
+        yearElement.classList.add('sample_number');
+        yearElement.innerText = item.year;  // Set the year dynamically from the API
+        leftSide.appendChild(yearElement);
+
+        const timelineLine = document.createElement('div');
+        timelineLine.classList.add('timeline-line');
+        timelineLine.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="timeline-icon">
+                <circle cx="10" cy="10" r="10" fill="#F2F0FF" />
+            </svg>`;
+        leftSide.appendChild(timelineLine);
+
+        // Dynamic content for the right side (details and images)
+        const contentSection = document.createElement('div');
+        const contentParagraph = document.createElement('p');
+        contentParagraph.innerText = item.details;  // Set event details dynamically
+        contentSection.appendChild(contentParagraph);
+
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('row', 'd-flex', 'justify-content-between');
+
+        // Handle the three images, make sure to prepend the base URL
+        [item.image1, item.image2, item.image3].forEach(imageUrl => {
+            if (imageUrl) {
+                const imageCol = document.createElement('div');
+                imageCol.classList.add('col-md-4', 'sample_timeline');
+
+                const imgTag = document.createElement('img');
+                imgTag.src = `${baseURL}${imageUrl}`;  // Prepend the base URL
+                imgTag.classList.add('img-fluid');
+
+                imageCol.appendChild(imgTag);
+                imageRow.appendChild(imageCol);
+            }
+        });
+
+        // Append the dynamic image row to the content section
+        contentSection.appendChild(imageRow);
+
+        // Append the content section to the right-side container
+        rightSide.appendChild(contentSection);
+    });
+})
+.catch(error => {
+    console.error('Error fetching timeline data:', error);
+});
+
+
+// *********************************************************************************************************************************
+function getAccessToken() {
+  return sessionStorage.getItem('access_token'); // Or use cookies if you store it there
+}
+
+// Function to create the HTML structure for each review
+function createReviewHTML(review, user) {
+  return `
+    <div class="col-md-6">
+      <div class="d-flex">
+        <div>
+          <img src="${user.profile_picture || ''}" alt="Profile Image" id="reviewimage0" style="width:60px; height:60px; border-radius:50%" />
+        </div>
+        <div class="sample__text">
+          <h3 class="sample__guest" id="reviewname">${user.username || ''}</h3>
+          <p class="sample__date">${new Date(review.created_at).toLocaleDateString()}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-5">
+      <div class="col-md-4 sample__right">
+        <h5>Eulogy / Lamentation</h5>
+        <p>${review.textfield1 || ''}</p>
+      </div>
+      <div class="col-md-4 sample__right">
+        <h5>Best Memory</h5>
+        <p>${review.textfield2 || ''}</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Something I Learned From</h5>
+        <p>${review.textfield3 || ''}</p>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <img src="${review.imagefield1 || ''}" class="img-fluid" id="reviewimage1" />
+      </div>
+      <div class="col-md-4">
+        <img src="${review.imagefield2 || ''}" class="img-fluid" id="reviewimage2" />
+      </div>
+      <div class="col-md-4">
+        <img src="${review.imagefield3 || ''}" class="img-fluid" id="reviewimage3" />
+      </div>
+    </div>
+  `;
+}
+
+// Function to fetch review data
+async function fetchReviewData() {
+  const token = getAccessToken();
+  
+  try {
+    const reviewResponse = await fetch('http://127.0.0.1:8001/api/deceased/reviews/', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`, // Passing the access token in headers
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const reviews = await reviewResponse.json();
+    
+    if (reviews.length > 0) {
+      const reviewContainer = document.getElementById('review-container');
+      reviewContainer.innerHTML = ''; // Clear existing reviews
+
+      // Fetch user details and append reviews to the page
+      for (const review of reviews) {
+        const user = await fetchUserData(review.created_by);
+        const reviewHTML = createReviewHTML(review, user);
+        reviewContainer.innerHTML += reviewHTML; // Append each review
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching review data:', error);
+  }
+}
+
+// Function to fetch user data
+async function fetchUserData(userId) {
+  const token = getAccessToken();
+
+  try {
+    const userResponse = await fetch(`http://127.0.0.1:8001/api/users/${userId}/`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`, // Passing the access token in headers
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const user = await userResponse.json();
+    return user; // Return user object to be used in creating the review
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+  }
+}
+
+// Call the function to fetch and display review data
+window.addEventListener("DOMContentLoaded", fetchReviewData);
+
+  </script>
+</body>
+
+</html>

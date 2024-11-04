@@ -1,0 +1,13 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.pyc
+env/
+
+# Node
+node_modules/
+dist/
+
+# Django or other framework secrets
+*.env

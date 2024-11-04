@@ -1,0 +1,156 @@
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar__bg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="index.html">
+      <img src="static/images/LOGO.png" height="40" alt="Logo" loading="lazy" />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar collapse content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Centered navigation links -->
+      <ul class="navbar-nav mb-2 mb-lg-0 mx-auto navbar__ul">
+        <li class="nav-item" id="dashboardLink" style="display: none">
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sample.html">Memorial Sample</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="find_your_dearest.html"
+            >Find Your Dearest</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cemetery.html">Cemetery </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Who we are</a>
+        </li>
+        <li class="nav-item" id="contactLink">
+          <a class="nav-link" href="contact.html">Contact us</a>
+        </li>
+        <li class="nav-item" id="loginLink">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item" id="logoutLink" style="display: none">
+          <a class="nav-link" href="#" onclick="handleLogout()">Logout</a>
+        </li>
+      </ul>
+
+      <!-- Right elements -->
+      <div class="d-lg-flex d-none align-items-center justify-content-center">
+        <img
+          src=""
+          class="ul__image"
+          height="40"
+          alt="User Profile Image"
+          loading="lazy"
+          id="user_image"
+        />
+        <button
+          type="button"
+          class="btn btn-sm ms-1 add_to_cart_btn"
+          id="cartBtn"
+        >
+          <b>Cart </b>
+          <i class="bi bi-cart"></i> <span id="cartCount">(0)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Structure -->
+<div
+  class="modal fade"
+  id="cartModal"
+  tabindex="-1"
+  aria-labelledby="cartModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div
+      class="modal-content"
+      style="
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      "
+    >
+      <div
+        class="modal-header"
+        style="
+          background-color: #6c5ce7;
+          color: white;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        "
+      >
+        <h5
+          class="modal-title"
+          id="cartModalLabel"
+          style="font-weight: bold; font-size: 1.5rem"
+        >
+          Your Shopping Cart
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th style="background-color: #a29bfe; color: white">Product</th>
+              <th style="background-color: #a29bfe; color: white">Image</th>
+              <th style="background-color: #a29bfe; color: white">Quantity</th>
+              <th style="background-color: #a29bfe; color: white">Action</th>
+            </tr>
+          </thead>
+          <tbody id="cartItems">
+            <!-- Example item, replace with dynamic content -->
+            <tr>
+              <td>Sample Product</td>
+              <td>
+                <img src="" alt="Product" class="img-thumbnail" />
+              </td>
+              <td>1</td>
+              <td>
+                <button
+                  class="btn btn-sm"
+                  style="background-color: #ff7675; border: none; color: white"
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <h5 id="totalPrice" class="text-white">Total: $0</h5>
+        <!-- New total price element -->
+      </div>
+    </div>
+  </div>
+</div>

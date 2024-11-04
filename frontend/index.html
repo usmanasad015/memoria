@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero section start -->
+    <div class="hero_section__bg">
+      <div class="container hero_section">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="hero_section__h1">
+              Keep the <span class="memories">Memories</span> of your<br />
+              loved ones
+              <span class="alive">Alive</span>
+            </h1>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="hero_section__p">
+              Preserving the memories of those we’ve lost is a timeless way to
+              honor their lives and keep their legacy alive. At In Memorial, we
+              provide innovative digital memorial solutions that blend the
+              beauty of traditional remembrance with the convenience of modern
+              technology. With our unique QR code memorials and AI-enhanced
+              tributes, you can create lasting, interactive memories that are
+              accessible anytime, anywhere. Our goal is to ensure that your
+              loved one’s story continues to be told, celebrated, and cherished
+              for generations to come.
+            </p>
+          </div>
+        </div>
+
+        <!-- second row start -->
+        <div class="row mt-3">
+          <div class="col-md-6 d-flex gap-4">
+            <button
+              type="button"
+              class="btn btn-sm ms-1 add_to_cart_btn hero_section__btn"
+            >
+              <b>Get Start</b>
+            </button>
+            <div>
+              <p class="mb-0 her0_section__in_jsut">In Just</p>
+              <p class="hero_section__dollar">
+                $199 <span class="hero_section__shipping">+shipping</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end gap-5">
+            <div>
+              <h3 class="hero_section__300">300+</h3>
+              <p class="hero_section__happy">Happy Users</p>
+            </div>
+            <div>
+              <h3 class="hero_section__300">300+</h3>
+              <p class="hero_section__happy">Happy Users</p>
+            </div>
+          </div>
+        </div>
+        <!-- second row end -->
+
+        <!-- video section start -->
+        <div class="row">
+          <div class="col-md-12 position-relative">
+            <div class="image-container">
+              <img
+                src="static/images/hero-image.png"
+                alt="Hero Image"
+                class="hero-image"
+              />
+              <!-- Play button that triggers modal -->
+              <img
+                src="static/images/play button.png"
+                alt="Play Button"
+                class="play-button"
+                data-bs-toggle="modal"
+                data-bs-target="#videoModal"
+              />
+            </div>
+
+            <!-- Modal for video playback -->
+            <div
+              class="modal fade"
+              id="videoModal"
+              tabindex="-1"
+              aria-labelledby="videoModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                    <video id="video" class="video-player w-100" controls>
+                      <source src="static/videos/21.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- video section end -->
+      </div>
+    </div>
+    <!-- Hero section end -->
+
+    <!--Honor lives section start-->
+    <div class="container py-4 honor_section">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-3">
+          <img
+            src="static/images/phone image.png"
+            alt=""
+            class="img-fluid mobile-image"
+          />
+        </div>
+        <div class="col-12 col-md-2 d-none d-md-block mb-3 text-center">
+          <img
+            src="static/images/arrow.png"
+            alt=""
+            class="img-fluid arrow-image mt-5"
+          />
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+          <h3 class="honor_section__h3 mb-3">
+            Honoring Lives, Connecting Memories
+          </h3>
+          <p>
+            In Memorial is revolutionizing how we honor our loved ones by
+            offering cutting-edge digital memorial services. Our platform allows
+            families to create lasting tributes through online memorial pages,
+            accessible via QR codes linked to physical memorials. These pages
+            are customizable and enriched with AI-enhanced features, providing a
+            comprehensive solution for modern memorialization.
+            <br /><br />
+            Our services bridge the gap between traditional memorial practices
+            and the digital age, offering comfort and connection to grieving
+            families. By integrating physical and digital elements, we provide a
+            seamless experience that celebrates life and preserves memories in
+            meaningful ways. Whether through our beautiful digital tribute pages
+            or our range of memorial products, In Memorial is dedicated to
+            transforming the grieving process into a celebration of life.
+          </p>
+          <button
+            type="button"
+            class="btn btn-sm ms-1 add_to_cart_btn hero_section__btn"
+          >
+            <b>Get Start</b>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--Honor lives section end-->
+
+    <!--Celeberating live start-->
+    <div class="celeberating_live container">
+      <h3 class="text-center celeberating__h3">
+        Remembering and Celebrating Live <br />
+        Through QR Code Memorials
+      </h3>
+      <p class="text-center celeberating__p">
+        Our QR code memorials offer a unique way to connect physical memorials
+        with digital tributes. By scanning the QR code, families and friends can
+        instantly access a personalized online memorial page filled with
+        cherished memories, stories, and photos, ensuring that the legacy of
+        their loved ones lives on in a vibrant and interactive way.
+      </p>
+      <div class="row mt-5">
+        <div class="col-md-3 col-12 celeberating__box">
+          <div class="box">
+            <div class="box-icon">
+              <img src="static/icons/clock-03.png" />
+              <!-- Example icon, adjust as needed -->
+            </div>
+            <div class="box-text">
+              <h4>Legacy Preservation for Future Generations</h4>
+              Preserve your loved one’s legacy in a lasting, digital format that
+              future generations can access and cherish forever.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12 celeberating__box">
+          <div class="box">
+            <div class="box-icon">
+              <img src="static/icons/infinity-circle.png" />
+              <!-- Example icon, adjust as needed -->
+            </div>
+            <div class="box-text">
+              <h4>Global Connection for Families</h4>
+              Our platform connects families across the world, allowing everyone
+              to share in the remembrance, no matter the distance.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12 celeberating__box">
+          <div class="box">
+            <div class="box-icon">
+              <img src="static/icons/healtcare.png" />
+              <!-- Example icon, adjust as needed -->
+            </div>
+            <div class="box-text">
+              <h4>Customizable Digital Memorial</h4>
+              Tailor every detail of your digital memorial, from photos to
+              messages, to make it as unique as your loved one.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12 celeberating__box">
+          <div class="box">
+            <div class="box-icon">
+              <img src="static/icons/chat-bot.png" />
+              <!-- Example icon, adjust as needed -->
+            </div>
+            <div class="box-text">
+              <h4>AI-Powered Digital Tribute</h4>
+              Our AI technology helps create personalized digital tributes that
+              capture the essence of your loved one's life.
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+          <button
+            type="button"
+            class="btn btn-sm ms-1 add_to_cart_btn celeberating__button"
+          >
+            <b>Free Trial Now</b>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--Celeberating live end-->
+
+    <!--process start -->
+    <div class="process_start">
+      <div class="container mt-5">
+        <h3 class="text-center celeberating__h3">Process</h3>
+        <div class="row">
+          <div class="col-md-4 process_start__card">
+            <div class="card">
+              <img
+                class="card-img-top p-2"
+                src="static/images/Rectangle 6 (1).png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Easy Account Creation</h5>
+                <p class="card-text">
+                  Setting up a memorial page is simple and intuitive. Families
+                  can easily create an account and begin crafting a tribute that
+                  reflects the life and legacy of their loved one.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 process_start__card">
+            <div class="card">
+              <img
+                class="card-img-top p-2"
+                src="static/images/Rectangle 6 (1).png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Content Upload</h5>
+                <p class="card-text">
+                  Add photos, videos, and stories to create a rich tapestry of
+                  memories. Our platform allows for easy uploading and
+                  organization of content, ensuring that every tribute is as
+                  unique as the individual it honors.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 process_start__card">
+            <div class="card">
+              <img
+                class="card-img-top p-2"
+                src="static/images/Rectangle 6 (1).png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">QR Code Integration</h5>
+                <p class="card-text">
+                  Once the memorial page is complete, receive a unique QR code
+                  that links directly to the tribute. This code can be placed on
+                  physical memorials, allowing for instant access to the digital
+                  tribute at any time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--process end-->
+
+    <!-- Reviews section start-->
+    <div class="review_start">
+      <div class="container mt-5 position-relative">
+        <h3 class="text-center celeberating__h3">Reviews</h3>
+        <p class="text-center celeberating__p mb-4">
+          In Memorial has touched the hearts of many, providing comfort and
+          connection during difficult times. Here’s what some of our customers
+          have to say:
+        </p>
+        <!-- Hide this image on small devices -->
+        <img
+          src="static/images/Vector 1.png"
+          class="review_start__img d-none d-md-block"
+        />
+        <div class="container py-4">
+          <div class="row">
+            <!-- Review Column 1 -->
+            <div
+              class="col-md-6 col-lg-3 d-flex flex-column align-items-center"
+            >
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Emily Johnson</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  In Memorial helped us create a beautiful tribute for my
+                  grandmother. The process was easy, and the end result was a
+                  touching memorial that our family treasures. We couldn't have
+                  asked for a better way to honor her memory.
+                </div>
+              </div>
+
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">John Sanderson</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  The QR code feature is brilliant. It makes it so easy for
+                  everyone to access the memorial page and share their memories.
+                  It's a modern solution that brings our family closer together.
+                </div>
+              </div>
+
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Sally Turner</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  The AI-enhanced features added a personal touch that made our
+                  tribute truly special. It felt like my brother was still with
+                  us, sharing his stories and voice.
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Column 2 -->
+            <div
+              class="col-md-6 col-lg-3 d-flex flex-column align-items-center"
+            >
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Michael Lee</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  I appreciate the seamless integration of digital and physical
+                  elements. It’s a modern way to honor our loved ones, and it
+                  has brought our family a lot of comfort.
+                </div>
+              </div>
+
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Rachel Kim</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  The customer service was outstanding. They guided us every
+                  step of the way and made sure our tribute was perfect. We felt
+                  supported throughout the process.
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Column 3 -->
+            <div
+              class="col-md-6 col-lg-3 d-flex flex-column align-items-center"
+            >
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">David Henderson</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  In Memorial has transformed the way we remember our loved
+                  ones. It’s a beautiful blend of tradition and technology, and
+                  it has helped us keep our memories alive.
+                </div>
+              </div>
+
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Sara Thompson</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  Such a beautiful way to keep memories alive. The QR code
+                  feature is so easy to use, and it brings comfort every time..
+                </div>
+              </div>
+
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Jason Miller</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  I loved how easy it was to create a memorial for my brother.
+                  The QR code feature was so innovative, and it brings us
+                  comfort knowing his memory is preserved forever.
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Column 4 -->
+            <div
+              class="col-md-6 col-lg-3 d-flex flex-column align-items-center"
+            >
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Rachelle Davis</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  In Memorial turned what could have been a difficult process
+                  into something beautiful. We cherish the digital tribute
+                  created for our mom.
+                </div>
+              </div>
+
+              <div class="box mb-4">
+                <div class="box-icon d-flex justify-content-between">
+                  <p class="text-black text__size">Michaella Anderson</p>
+                  <p>⭐5.0</p>
+                </div>
+                <div class="box-text">
+                  The whole process was seamless. In Memorial provided us with a
+                  touching way to celebrate my dad's life, and the QR code
+                  feature is just incredible.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews section end-->
+
+    <!-- priceing section start here -->
+
+    <section id="pricing" class="pricing-content section-padding" mt-5>
+      <div class="container">
+        <div class="section-title text-center mt-5">
+          <h2>Pricing Plans</h2>
+        </div>
+        <div class="row text-center">
+          <div
+            class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.1s"
+            data-wow-offset="0"
+            style="
+              visibility: visible;
+              animation-duration: 1s;
+              animation-delay: 0.1s;
+              animation-name: fadeInUp;
+            "
+          >
+            <div class="pricing_design">
+              <div class="single-pricing">
+                <div class="price-head">
+                  <h2>Starter</h2>
+                  <h1>$0</h1>
+                  <span>/Monthly</span>
+                </div>
+                <ul>
+                  <li><b>15</b> website</li>
+                  <li><b>50GB</b> Disk Space</li>
+                  <li><b>50</b> Email</li>
+                  <li><b>50GB</b> Bandwidth</li>
+                  <li><b>10</b> Subdomains</li>
+                  <li><b>Unlimited</b> Support</li>
+                </ul>
+                <div class="pricing-price"></div>
+                <a href="#" class="price_btn">Order Now</a>
+              </div>
+            </div>
+          </div>
+          <!--- END COL -->
+          <div
+            class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.2s"
+            data-wow-offset="0"
+            style="
+              visibility: visible;
+              animation-duration: 1s;
+              animation-delay: 0.2s;
+              animation-name: fadeInUp;
+            "
+          >
+            <div class="pricing_design">
+              <div class="single-pricing">
+                <div class="price-head">
+                  <h2>Personal</h2>
+                  <h1 class="price">$29</h1>
+                  <span>/Monthly</span>
+                </div>
+                <ul>
+                  <li><b>15</b> website</li>
+                  <li><b>50GB</b> Disk Space</li>
+                  <li><b>50</b> Email</li>
+                  <li><b>50GB</b> Bandwidth</li>
+                  <li><b>10</b> Subdomains</li>
+                  <li><b>Unlimited</b> Support</li>
+                </ul>
+                <div class="pricing-price"></div>
+                <a href="#" class="price_btn">Order Now</a>
+              </div>
+            </div>
+          </div>
+          <!--- END COL -->
+          <div
+            class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.3s"
+            data-wow-offset="0"
+            style="
+              visibility: visible;
+              animation-duration: 1s;
+              animation-delay: 0.3s;
+              animation-name: fadeInUp;
+            "
+          >
+            <div class="pricing_design">
+              <div class="single-pricing">
+                <div class="price-head">
+                  <h2>Ultimate</h2>
+                  <h1 class="price">$49</h1>
+                  <span>/Monthly</span>
+                </div>
+                <ul>
+                  <li><b>15</b> website</li>
+                  <li><b>50GB</b> Disk Space</li>
+                  <li><b>50</b> Email</li>
+                  <li><b>50GB</b> Bandwidth</li>
+                  <li><b>10</b> Subdomains</li>
+                  <li><b>Unlimited</b> Support</li>
+                </ul>
+                <div class="pricing-price"></div>
+                <a href="#" class="price_btn">Order Now</a>
+              </div>
+            </div>
+          </div>
+          <!--- END COL -->
+        </div>
+        <!--- END ROW -->
+      </div>
+      <!--- END CONTAINER -->
+    </section>
+    <!-- priceing section end here -->
+
+    <!--video section 2 start-->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12 position-relative">
+          <div class="image-container">
+            <img
+              src="static/images/Rectangle 133.png"
+              alt="Hero Image"
+              class="hero-image"
+            />
+            <!-- Play button that triggers modal -->
+            <img
+              src="static/images/play button.png"
+              alt="Play Button"
+              class="play-button"
+              data-bs-toggle="modal"
+              data-bs-target="#videoModal"
+            />
+          </div>
+
+          <!-- Modal for video playback -->
+          <div
+            class="modal fade"
+            id="videoModal"
+            tabindex="-1"
+            aria-labelledby="videoModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                  <video id="video" class="video-player w-100" controls>
+                    <source src="static/videos/21.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--video section 2 end-->
+
+    <!--Mexico section start-->
+    <div class="maxico_start">
+      <div class="container mt-5">
+        <h3 class="text-center celeberating__h3">Maxico Map with cemeteries</h3>
+        <p class="text-center celeberating__p mb-4">
+          Our interactive Mexico map highlights cemeteries across the country,
+          providing a convenient way to locate and explore burial sites. Whether
+          you're looking to visit the resting place of a loved one or explore
+          historical cemeteries, this map offers a user-friendly guide to
+          connecting with the places that hold memories and heritage.
+        </p>
+        <div class="row d-flex justify-content-evenly">
+          <div class="col-md-3">
+            <h5>Search by name</h5>
+            <input
+              type="text"
+              class="form-control rounded-4"
+              placeholder="Name"
+            />
+          </div>
+          <div class="col-md-3">
+            <h5>Search by City</h5>
+            <select
+              class="form-select rounded-4"
+              id="exampleSelect"
+              aria-label="Default select example"
+            >
+              <option selected>Select City</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Search by Cemetry</h5>
+            <select
+              class="form-select rounded-4"
+              id="exampleSelect"
+              aria-label="Default select example"
+            >
+              <option selected>Select cemetry</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-3">
+          <iframe
+            class="custom-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093716!2d144.95373631531684!3d-37.817209979751955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5774f352d7a83b3!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510920913119"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!--Mexico section end-->
+
+    <!-- Frequently asked question start -->
+    <div class="maxico_start">
+      <div class="container mt-5">
+        <h3 class="text-center celeberating__h3">Frequently Asked Questions</h3>
+
+        <div class="row d-flex justify-content-evenly">
+          <div class="col-md-5">
+            <div class="accordion w-100" id="accordion1">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne1">
+                  <button
+                    class="accordion-button collapsed custom-accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne1"
+                    aria-expanded="false"
+                    aria-controls="collapseOne1"
+                  >
+                    <span class="me-2 icon-toggle">
+                      <img
+                        src="static/icons/+.png"
+                        class="icon-plus"
+                        alt="Plus Icon"
+                        style="display: inline-block"
+                      />
+                      <img
+                        src="static/icons/-.png"
+                        class="icon-minus"
+                        alt="Minus Icon"
+                        style="display: none"
+                      />
+                    </span>
+                    What is a QR code memorial?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne1"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne1"
+                  data-bs-parent="#accordion1"
+                >
+                  <div class="accordion-body">
+                    A QR code memorial links a physical memorial to an online
+                    tribute page, allowing easy access to digital memories.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="accordion w-100" id="accordion2">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne2">
+                  <button
+                    class="accordion-button collapsed custom-accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne2"
+                    aria-expanded="false"
+                    aria-controls="collapseOne2"
+                  >
+                    <span class="me-2 icon-toggle">
+                      <img
+                        src="static/icons/+.png"
+                        class="icon-plus"
+                        alt="Plus Icon"
+                        style="display: inline-block"
+                      />
+                      <img
+                        src="static/icons/-.png"
+                        class="icon-minus"
+                        alt="Minus Icon"
+                        style="display: none"
+                      />
+                    </span>
+                    How do I create a memorial page?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne2"
+                  data-bs-parent="#accordion2"
+                >
+                  <div class="accordion-body">
+                    Simply create an account on our platform, upload your
+                    content, and customize your page to reflect your loved one’s
+                    life.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 mt-2">
+            <div class="accordion w-100" id="accordion3">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne3">
+                  <button
+                    class="accordion-button collapsed custom-accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne3"
+                    aria-expanded="false"
+                    aria-controls="collapseOne3"
+                  >
+                    <span class="me-2 icon-toggle">
+                      <img
+                        src="static/icons/+.png"
+                        class="icon-plus"
+                        alt="Plus Icon"
+                        style="display: inline-block"
+                      />
+                      <img
+                        src="static/icons/-.png"
+                        class="icon-minus"
+                        alt="Minus Icon"
+                        style="display: none"
+                      />
+                    </span>
+                    What features are included in the memorial page?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne3"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne3"
+                  data-bs-parent="#accordion3"
+                >
+                  <div class="accordion-body">
+                    Our pages include unlimited images and videos, guest books,
+                    family tree integration, and fundraising options.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 mt-2">
+            <div class="accordion w-100" id="accordion4">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne4">
+                  <button
+                    class="accordion-button collapsed custom-accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne4"
+                    aria-expanded="false"
+                    aria-controls="collapseOne4"
+                  >
+                    <span class="me-2 icon-toggle">
+                      <img
+                        src="static/icons/+.png"
+                        class="icon-plus"
+                        alt="Plus Icon"
+                        style="display: inline-block"
+                      />
+                      <img
+                        src="static/icons/-.png"
+                        class="icon-minus"
+                        alt="Minus Icon"
+                        style="display: none"
+                      />
+                    </span>
+                    Can I upgrade to AI-enhanced features later?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne4"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne4"
+                  data-bs-parent="#accordion4"
+                >
+                  <div class="accordion-body">
+                    Yes, you can upgrade to include AI-enhanced features like
+                    animated avatars and voice cloning at any time.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-evenly">
+          <div class="col-md-5 mt-2">
+            <div class="accordion w-100" id="accordion5">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne5">
+                  <button
+                    class="accordion-button collapsed custom-accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne5"
+                    aria-expanded="false"
+                    aria-controls="collapseOne5"
+                  >
+                    <span class="me-2 icon-toggle">
+                      <img
+                        src="static/icons/+.png"
+                        class="icon-plus"
+                        alt="Plus Icon"
+                        style="display: inline-block"
+                      />
+                      <img
+                        src="static/icons/-.png"
+                        class="icon-minus"
+                        alt="Minus Icon"
+                        style="display: none"
+                      />
+                    </span>
+                    How secure is my data on the platform?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne5"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne5"
+                  data-bs-parent="#accordion5"
+                >
+                  <div class="accordion-body">
+                    We prioritize your privacy and security, ensuring all data
+                    is protected and only accessible to authorized users.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frequently asked question end -->
+
+    <div id="footer-placeholder"></div>
+    <!--Footer section end-->
+    <script src="js/common.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <script src="url.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("Configuration loaded", window.config);
+        updateCartCount();
+      });
+    </script>
+    <script src="js/cart_common.js"></script>
+    <script>
+      // Cart functionality
+
+      // Function to load the footer HTML
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading Footer:", error));
+    </script>
+  </body>
+</html>

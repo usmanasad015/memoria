@@ -1,0 +1,202 @@
+* {
+  font-family: "Poppins";
+}
+.navbar__bg {
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 24px 0px rgba(151, 71, 255, 0.25);
+}
+.navbar__ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* font-family: "Poppins"; */
+}
+
+.ul__image {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 100px !important;
+}
+
+.add_to_cart_btn {
+  width: 110px;
+  height: 35px;
+  border-radius: 100px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Hover effect */
+.add_to_cart_btn:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+/* Login design */
+.login__col_6 {
+  color: rgba(255, 255, 255, 1);
+}
+
+.padding_row {
+  padding: 40px;
+}
+.login_h2 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: rgba(62, 3, 178, 1);
+}
+.login_p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: rgba(137, 138, 138, 1);
+}
+.login_label {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: rgba(137, 138, 138, 1);
+}
+.login_input {
+  width: 100%;
+  height: 51px;
+  border-radius: 15px;
+  padding: 16px;
+}
+.login__checkbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.login_forgot_password {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: rgba(125, 135, 145, 1);
+  text-decoration: none;
+}
+.login_button {
+  width: 100%;
+  height: 51px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: aliceblue;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+.login_button:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+.login_divider {
+  width: 100%;
+  max-width: 314px;
+  margin: 1rem auto;
+  display: block;
+}
+.login_button_google {
+  width: 100%;
+  height: 51px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(72, 1, 214, 1);
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Hover effect */
+.login_button_google:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+.login_span {
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: rgba(62, 3, 178, 1);
+}
+.login__account {
+  text-align: center;
+}
+.login__image__parent {
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.login__image__child__1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.login__image__child__2 {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%;
+  height: auto;
+}
+.login_image__child_text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+}
+.login__md__7 {
+  background: rgba(248, 249, 253, 1);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.login__form {
+  padding: 2rem;
+  width: 70%;
+  margin: 20px auto;
+}
+
+/* Media queries for small devices */
+@media (max-width: 768px) {
+  .login__md__7 {
+    border-radius: 20px;
+  }
+  .login__form {
+    padding: 1rem;
+  }
+  .login_h2 {
+    font-size: 2rem;
+  }
+  .login_label {
+    font-size: 1rem;
+  }
+  .login__checkbox {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .login_image__child_text {
+    display: none;
+  }
+  .padding_row {
+    padding: 0;
+  }
+}

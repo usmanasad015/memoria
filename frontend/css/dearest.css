@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  overflow-x: hidden !important;
+  font-family: "Poppins", sans-serif;
+}
+.navbar__bg {
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 24px 0px rgba(151, 71, 255, 0.25);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand img {
+  height: 30px;
+}
+
+.navbar__ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ul__image {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 100px !important;
+}
+
+.add_to_cart_btn {
+  width: 110px;
+  height: 35px;
+  border-radius: 100px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Hover effect */
+.add_to_cart_btn:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+.dearest__col_8 {
+  border-radius: 20px;
+  border: 2px solid var(--light-shade, #d4cdff);
+  background: var(--white, #fff);
+  box-shadow: 0px 4px 24px 0px rgba(151, 71, 255, 0.15);
+  padding: 20px;
+}
+
+.dearest__row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.dearest_search_btn {
+  width: 140px;
+  height: 35px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #5702ff, #4801d6) !important;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+
+  color: #fff;
+}
+/* Hover effect */
+.dearest_search_btn:hover {
+  background: linear-gradient(
+    to right,
+    #4801d6,
+    #5702ff
+  ); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  color: white;
+}
+
+.dearest__qr__input {
+  width: 100%;
+  max-width: 410px;
+}
+
+.dearest__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.dearest__h3 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: #9373ff;
+}
+
+.dearest__row__1 {
+  margin-top: 60px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.modal-dialog {
+  max-width: 90%;
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+}
+.footer_start {
+  background: linear-gradient(to right, #e9e4ff 100%, #b6a5ff 0%);
+  padding: 50px 20px;
+}
+
+.footer_h4 {
+  color: #131415;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-bottom: 1rem;
+}
+
+.footer_ul li a {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 2;
+  color: #717273;
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .navbar__ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dearest__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dearest_search_btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .dearest__h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .footer_start .row > div {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-brand img {
+    height: 25px;
+  }
+
+  .add_to_cart_btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .dearest__col_8 {
+    padding: 15px;
+  }
+
+  .dearest__h3 {
+    font-size: 20px;
+  }
+
+  .footer_h4 {
+    font-size: 14px;
+  }
+
+  .footer_ul li {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar__ul {
+    font-size: 12px;
+  }
+}

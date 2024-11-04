@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h4 {
+      margin-bottom: 20px;
+    }
+
+    .sidebar .nav-link {
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .sidebar .nav-link.active,
+    .sidebar .nav-link:hover {
+      background-color: #e9ecef;
+      color: #000;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    .form-container {
+      background-color: #e9ecef;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2 {
+      color: #6610f2;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .custom-file-upload {
+      background-color: #7749f8;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .upload-box {
+      width: 100%;
+      height: 150px;
+      background-color: #e7e5ff;
+      border: 2px dashed #7749f8;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .modal-lg-custom {
+      max-width: 90%;
+      /* Adjust the percentage to your needs */
+    }
+
+    .modal-dialog {
+      max-width: 800px;
+      /* Adjust this value as needed */
+      width: 90%;
+      /* This will ensure it takes up to 90% of the viewport width */
+    }
+
+    .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;  /* Horizontal center */
+  align-items: center;      /* Vertical center */
+}
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a class="nav-link" href="#dashboard" onclick="showSection(event, 'dashboard')">
+      Admin Dashboard</a>
+    <a class="nav-link" href="#organization" onclick="showSection(event, 'organization')">Add Organization</a>
+    <a class="nav-link" href="#vieworganization" onclick="showSection(event, 'vieworganization')" id="view_organization">View Organization</a>
+    <a class="nav-link" href="#partner" onclick="showSection(event, 'partner')">Add Partner</a>
+    <a class="nav-link" href="#viewpartner" onclick="showSection(event, 'viewpartner')" id="view_partner">View Partner</a>
+    <a class="nav-link" href="#viewuser" onclick="showSection(event, 'viewuser')">View User</a>
+    <a class="nav-link" href="#addproduct" onclick="showSection(event, 'addproduct')">Add Product</a>
+    <a class="nav-link" href="#viewproduct" onclick="showSection(event, 'viewproduct')" id="view_product">View Product</a>
+    <a class="nav-link" href="#queries1" onclick="showSection(event, 'queries1')">View Queries</a>
+
+    <a class="nav-link" href="#orders" onclick="showSection(event, 'orders')">View Orders</a>
+    <a class="nav-link" href="#qrcode" onclick="showSection(event, 'qrcode')">QrCode</a>
+    <a class="nav-link" href="index.html">Back to Home</a>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h2>Welcome to the Dashboard</h2>
+
+    <!-- dashboard start  -->
+    <div id="dashboard" class="container my-4 content-section">
+      <div class="row">
+        <!-- Card for Total Organizations -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              Total Organizations
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" id="totalOrganizations">0</h5>
+              <p class="card-text">
+                Number of organizations currently in the system.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card for Total Partners -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header bg-success text-white">
+              Total Partners
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" id="totalPartners">0</h5>
+              <p class="card-text">
+                Number of partners currently in the system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- dashboard end  -->
+
+    <!-- Organization Form Section -->
+    <div id="organization" class="content-section">
+      <form id="signupFormorganization" class="signup__form signup_form_mobile" enctype="multipart/form-data">
+        <div class="form-container">
+          <h2 class="mb-4">Organization Details</h2>
+          
+          <div class="row mb-3">
+            <div class="col-md-6 mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Name" required />
+              <div class="text-danger" id="error-name"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="address" class="form-label">Address</label>
+              <textarea class="form-control" id="address" placeholder="Address" required></textarea>
+              <div class="text-danger" id="error-address"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="contact_number" class="form-label">Contact Number</label>
+              <input type="number" class="form-control" id="contact_number" placeholder="Number"required />
+              <div class="text-danger" id="error-contact_number"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="location_link" class="form-label">Location Link</label>
+              <input type="text" class="form-control" id="location_link" placeholder="Location Link" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="location_link" class="form-label">Image</label>
+              <input type="file" class="form-control" id="image_link" placeholder="Image" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" placeholder="Description" required></textarea>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="latitude" class="form-label">Latitude</label>
+              <input type="text" class="form-control" id="latitude" placeholder="Latitude"  required/>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="longitude" class="form-label">Longitude</label>
+              <input type="text" class="form-control" id="longitude" placeholder="Longitude"  required/>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- view organization -->
+    <div id="vieworganization" class="content-section">
+      <table class="table" id="organizationTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Image</th>
+            <th>Contact Number</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- edit organization -->
+    <!-- Modal for Editing Organization -->
+    <div class="modal fade" id="editOrganizationModal" tabindex="-1" aria-labelledby="editOrganizationModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editOrganizationModalLabel">
+              Edit Organization
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editOrganizationForm" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="editName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="editName" required />
+              </div>
+              <div class="mb-3">
+                <label for="editAddress" class="form-label">Address</label>
+                <textarea class="form-control" id="editAddress" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editContactNumber" class="form-label">Contact Number</label>
+                <input type="number" class="form-control" id="editContactNumber"  required/>
+              </div>
+              <div class="mb-3">
+                <label for="editLocationLink" class="form-label">Location Link</label>
+                <input type="text" class="form-control" id="editLocationLink" required/>
+              </div>
+              <div class="mb-3">
+                <label for="editImageLink" class="form-label">Image</label>
+                <input type="file" class="form-control" id="editImageLink" />
+              </div>
+              <div class="mb-3">
+                <label for="editDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="editDescription" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editLatitude" class="form-label">Latitude</label>
+                <input type="text" class="form-control" id="editLatitude"  required/>
+              </div>
+              <div class="mb-3">
+                <label for="editLongitude" class="form-label">Longitude</label>
+                <input type="text" class="form-control" id="editLongitude" required />
+              </div>
+              <input type="hidden" id="editOrgId" />
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner Form Section -->
+    <div id="partner" class="content-section">
+      <form id="signupFormpartner" class="signup__form signup_form_mobile">
+        <div class="form-container">
+          <h2 class="mb-4">Partner Details</h2>
+          <div class="text-danger" id="error-email"></div>
+
+          <div class="row mb-3">
+            <!-- Name Input -->
+            <div class="col-md-6 mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name1" placeholder="Name" required />
+            </div>
+            <!-- Email Input -->
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Email" required />
+            </div>
+            <!-- Password Input -->
+            <div class="col-md-6 mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password" required />
+            </div>
+            <!-- Contact Number Input -->
+            <div class="col-md-6 mb-3">
+              <label for="number" class="form-label">Contact Number</label>
+              <input type="number" class="form-control" id="number" placeholder="Number" required />
+            </div>
+            <!-- Description Input -->
+            <div class="col-md-6 mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description1" placeholder="Description" required></textarea>
+            </div>
+            <!-- Shipping Address Input -->
+            <div class="col-md-6 mb-3">
+              <label for="shipping" class="form-label">Shipping Address</label>
+              <textarea class="form-control" id="shipping" placeholder="Shipping Address" required></textarea>
+            </div>
+            <!-- Organization Select -->
+            <div class="col-md-6 mb-3">
+              <label for="organization" class="form-label">Organization</label>
+              <select id="organizationpartner" class="form-control" required>
+                <option value="">Select Organization</option>
+              </select>
+            </div>
+          </div>
+          <!-- Submit Button -->
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- view partner -->
+    <div id="viewpartner" class="content-section">
+      <table class="table" id="partnerTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Organization Name</th>
+            <th>Shipping Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- edit parnter -->
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="partnerModal" tabindex="-1" aria-labelledby="partnerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="partnerModalLabel">Edit Partner</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editpartner" class="signup__form signup_form_mobile">
+              <div class="form-container">
+                <div class="row mb-3">
+                  <!-- Name Input -->
+                  <div class="col-md-6 mb-3">
+                    <label for="name1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="editname" placeholder="Name" required />
+                  </div>
+                  <!-- Email Input -->
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="editemail" placeholder="Email" required />
+                  </div>
+                  <!-- Password Input -->
+                  <div class="col-md-6 mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="editpassword" placeholder="Password" />
+                  </div>
+                  <!-- Contact Number Input -->
+                  <div class="col-md-6 mb-3">
+                    <label for="number" class="form-label">Contact Number</label>
+                    <input type="number" class="form-control" id="editnumber" placeholder="Number" />
+                  </div>
+                  <!-- Description Input -->
+                  <div class="col-md-6 mb-3">
+                    <label for="description1" class="form-label">Description</label>
+                    <textarea class="form-control" id="editdescription1" placeholder="Description"></textarea>
+                  </div>
+                  <!-- Shipping Address Input -->
+                  <div class="col-md-6 mb-3">
+                    <label for="shipping" class="form-label">Shipping Address</label>
+                    <textarea class="form-control" id="editshipping" placeholder="Shipping Address"></textarea>
+                  </div>
+                  <!-- Organization Select -->
+                  <div class="col-md-6 mb-3">
+                    <label for="organizationpartner" class="form-label">Organization</label>
+                    <select id="editorganizationpartner" class="form-control">
+                      <option value="">Select Organization</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="viewuser" class="content-section"></div>
+
+    <div id="addproduct" class="content-section">
+      <form id="addproductform" class="signup__form signup_form_mobile" enctype="multipart/form-data">
+        <div class="form-container">
+          <h2 class="mb-4">Add Product</h2>
+          <div class="row mb-3">
+            <!-- Name Input -->
+            <div class="col-md-6 mb-3">
+              <label for="name1" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
+            </div>
+            <!-- Supplier Email Input -->
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Supplier Email</label>
+              <input type="email" class="form-control" id="vendor_email" name="vendor_email" placeholder="Email"
+                required />
+            </div>
+            <!-- Price Input -->
+            <div class="col-md-6 mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price" name="price" placeholder="Price" required />
+            </div>
+            <!-- Image Inputs -->
+            <div class="col-md-6 mb-3">
+              <label for="image1" class="form-label">Image 1</label>
+              <input type="file" class="form-control" id="image1" name="image1"  required/>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="image2" class="form-label">Image 2</label>
+              <input type="file" class="form-control" id="image2" name="image2" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="image3" class="form-label">Image 3</label>
+              <input type="file" class="form-control" id="image3" name="image3" required />
+            </div>
+            <!-- Description Input -->
+            <div class="col-md-6 mb-3">
+              <label for="description1" class="form-label">Description</label>
+              <textarea class="form-control" id="description" name="description" placeholder="Description" required></textarea>
+            </div>
+          </div>
+          <!-- Submit Button -->
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="viewproduct" class="content-section">
+      <table id="product-table" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Price</th>
+            <th>Image 1</th>
+            <th>Image 2</th>
+            <th>Image 3</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Product rows will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- edit from product  -->
+    <!-- Modal Structure -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProductModalLabel">
+              Edit Product
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editProductForm" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="edit-name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="edit-name" name="name" placeholder="Name" required />
+              </div>
+              <div class="mb-3">
+                <label for="edit-email" class="form-label">Supplier Email</label>
+                <input type="email" class="form-control" id="edit-email" name="vendor_email" placeholder="Email"
+                  required />
+              </div>
+              <div class="mb-3">
+                <label for="edit-price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="edit-price" name="price" placeholder="Price" required />
+              </div>
+              <input type="hidden" id="existing-image1" />
+              <input type="hidden" id="existing-image2" />
+              <input type="hidden" id="existing-image3" />
+              <div class="mb-3">
+                <label for="edit-image1" class="form-label">Image 1</label>
+                <input type="file" class="form-control" id="edit-image1" name="image1" />
+              </div>
+              <div class="mb-3">
+                <label for="edit-image2" class="form-label">Image 2</label>
+                <input type="file" class="form-control" id="edit-image2" name="image2" />
+              </div>
+              <div class="mb-3">
+                <label for="edit-image3" class="form-label">Image 3</label>
+                <input type="file" class="form-control" id="edit-image3" name="image3" />
+              </div>
+              <div class="mb-3">
+                <label for="edit-description" class="form-label">Description</label>
+                <textarea class="form-control" id="edit-description" name="description"
+                  placeholder="Description"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="queries1" class="content-section">
+      <table id="queries-table" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Query Text</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Query rows will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="orders" class="content-section">
+      <table id="ordersTable" class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Items</th>
+            <th>Status</th>
+            <th>Total Amount</th>
+            <th>Order Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Orders will be populated here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Product Details Modal -->
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel">Order Products</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="productList" class="list-group">
+              <!-- Product details will be inserted here -->
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- qrcode start -->
+    <div id="qrcode" class="content-section">
+      <div class="container mt-4">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <select class="form-select" id="partnerSelect">
+              <option value="">Select partner</option>
+            </select>
+          </div>
+
+          <div class="col-md-6 text-end">
+            <button class="btn btn-outline-secondary me-2" id="filterUnassignedBtn">FILTER UNASSIGNED</button>
+            <button class="btn btn-outline-secondary" id="bulkDownloadBtn">BULK DOWNLOAD</button>
+          </div>
+        </div>
+        <table class="table table-bordered" id="qrcodeTable">
+          <thead>
+            <tr>
+              <th></th>
+              <th>id</th>
+              <th>hovercode id</th>
+              <th>partner id</th>
+              <th>deceased id</th>
+              <th>url</th>
+              <th>status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="loader" class="loader"  style="display: none;">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <!-- qrcode end -->
+
+    <!-- edit qr code -->
+    <div class="modal fade" id="editQRCodeModal" tabindex="-1" aria-labelledby="editQRCodeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="editQRCodeModalLabel">Edit QR Code</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form id="editQRCodeForm">
+                      <div class="mb-3">
+                          <label for="hovercodeId" class="form-label">Hover Code ID</label>
+                          <input type="text" class="form-control" id="hovercodeId" readonly>
+                      </div>
+                      <div class="mb-3">
+                          <label for="partnerId" class="form-label">Partner</label>
+                          <select id="partnerId" class="form-select">
+                            <option value="">Select partner</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label for="deceasedId" class="form-label">Deceased</label>
+                          <select id="deceasedId" class="form-select">
+                            <option value="">Select Deceased</option>
+
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label for="url" class="form-label">URL</label>
+                          <input type="text" class="form-control" id="url" readonly>
+                      </div>
+                      <div class="mb-3">
+                          <label for="status" class="form-label">Status</label>
+                          <select id="status" class="form-select">
+                              <option value="assigned">Assigned</option>
+                              <option value="unassigned">Unassigned</option>
+                          </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="url.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script></script>
+</body>
+
+</html>
